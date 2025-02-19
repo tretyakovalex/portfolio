@@ -16,6 +16,7 @@ app.use(cors());
 // === Routes: ===
 // ===============
 app.use(require('./routes/contact-form-routes.js'));
+app.use(require('./routes/download-pricing-pdf-routes.js'));
 
 
 // === Frontend: ===

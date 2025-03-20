@@ -23,6 +23,9 @@ app.use(require('./routes/download-pricing-pdf-routes.js'));
 // =================
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+    res.status(404).send({ message: 'API route not found' }); // Or a custom 404 message
+});
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
 });
